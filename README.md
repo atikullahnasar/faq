@@ -1,6 +1,7 @@
 FAQ Package:
 
 A lightweight and easy-to-use Laravel package for managing Frequently Asked Questions (FAQs) with built-in migrations and routes.
+must need to be add on composer.json on your main project "repositories": [{"type": "vcs", "url": "https://github.com/atikullahnasar/faq" }],
 
 Installation & Setup
 
