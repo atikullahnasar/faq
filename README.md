@@ -1,10 +1,14 @@
 FAQ Package:
 
 A lightweight and easy-to-use Laravel package for managing Frequently Asked Questions (FAQs) with built-in migrations and routes.
-must need to have authentication.
-must need to be add on composer.json on your main project "repositories": [{"type": "vcs", "url": "https://github.com/atikullahnasar/faq" }],
 
-Installation & Setup
+Installation Guide:
+must need to be have any kinds of authentication system.This package is not published on Packagist yet, so you need to add the GitHub repository manually to your main project’s composer.json file.
+
+Add the following inside composer.json:
+"repositories": [ { "type": "vcs", "url": "https://github.com/atikullahnasar/blog" } ]
+
+Save the file after adding this.
 
 Follow the steps below to install and configure the package in your Laravel project:
 
