@@ -13,11 +13,20 @@ class FaqPackageServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // Load routes
-        $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
+
+        // Publish config
+        $this->publishes([
+            __DIR__ . '/../Config/faq.php' => config_path('faq.php'),
+        ], 'faq-config');
+
+        // Load views based on config
+        $layout = config('faq.layout', 'tailwind');
 
         // Load views
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'faq');
+        $this->loadViewsFrom(__DIR__ . '/../Resources/views/' . $layout, 'faq');
+
+        // Load routes
+        $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
 
         // Publish migrations
         $this->publishes([__DIR__ . '/../Database/migrations' => database_path('migrations'),
