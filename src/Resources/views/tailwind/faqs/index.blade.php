@@ -32,7 +32,7 @@
                 <th>Answer</th>
                 <th>Status</th>
                 <th>Order</th>
-                <th class="text-center">Action</th>
+                <th class="text-center"><span class="flex justify-center">Action</span></th>
             </tr>
         </thead>
     </table>
@@ -40,10 +40,10 @@
 
 <!-- Add/Edit Modal -->
 <div id="addEditFaqs" class="fixed inset-0 bg-black/50 hidden items-center justify-center">
-    <div class="bg-white w-full max-w-2xl rounded shadow-lg">
+    <div class="bg-white w-full max-w-xl rounded shadow-lg">
         <div class="flex justify-between items-center px-6 py-4 border-b">
             <h5 class="font-semibold" id="modalTitle">Create New FAQ</h5>
-            <button id="closeAddEditFaqs" class="text-gray-500 hover:text-black">&times;</button>
+            <button id="closeAddEditFaqs" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-700 mb-2">&times;</button>
         </div>
 
         <form id="faqForm" class="p-6 space-y-4">
@@ -140,8 +140,10 @@ $(document).ready(function() {
             {
                 data: 'id',
                 render: data => `
+                <div class="flex justify-center gap-2">
                     <button class="bg-green-600 text-white px-2 py-1 rounded edit-btn" data-id="${data}">Edit</button>
                     <button class="bg-red-600 text-white px-2 py-1 rounded delete-btn" data-id="${data}">Delete</button>
+                </div>
                 `
             }
         ]
